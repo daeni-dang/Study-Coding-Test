@@ -6,12 +6,10 @@ int main() {
     cin >> s;
     int result = 0;
     for (char c : s) {
-        if (result == 0 || result == 1 || c == '1') {
+        if (result <= 1 || c <= '1')
             result += (c - '0');
-        }
-        else {
+        else
             result *= (c - '0');
-        }
     }
     cout << result << endl;
 }
