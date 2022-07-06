@@ -23,17 +23,22 @@ int main() {
     cout << "for" << endl;
     for (int i=0; i<n-1; i++) {
         cout << B[i] << " ";
+        B[i] = 0;
     }
     cout << endl;
     // 방법 2 : 스택
     stack<pair<int, int>> s;
+    int b_idx = 0;
     int tmp = A[0];
-    for (int i=1; i<n; i++) {
+    int i = 1;
+    while (b_idx < n - 1) {
         s.push({A[i], i});
+        i++;
         if (tmp < s.top().first) {
-            B[i - 1] = s.top().second;
+            B[b_idx++] = s.top().second;
             s.pop();
-            tmp = A[i];
+            tmp = A[b_idx];
+            i = b_idx;
         }
     }
     cout << "stack" << endl;
