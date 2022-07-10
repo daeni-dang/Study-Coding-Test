@@ -18,18 +18,17 @@ int main() {
     }
     int start = bs_front(arr, x, n);
     int end = bs_back(arr, x, n);
-    cout << start << ", " << end << endl;
     if (start == -1 || end == -1) {
         cout << -1 << endl;
     }
-    else cout << end - start << endl;
+    else cout << end - start + 1 << endl;
 }
 
 int bs_front(int arr[], int x, int n) {
     int start = 0, end = n - 1;
     while (start <= end) {
         int mid = (start + end) / 2;
-        if (arr[mid] >= x)
+        if (arr[mid] > x)
             end = mid - 1;
         else if (arr[mid] < x)
             start = mid + 1;
@@ -46,7 +45,7 @@ int bs_back(int arr[], int x, int n) {
     int start = 0, end = n - 1;
     while (start <= end) {
         int mid = (start + end) / 2;
-        if (arr[mid] >= x)
+        if (arr[mid] > x)
             end = mid - 1;
         else if (arr[mid] < x)
             start = mid + 1;
