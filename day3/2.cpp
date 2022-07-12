@@ -1,13 +1,15 @@
 /*
-   1. food_times 벡터에 pair로 저장 <food_time, 인덱스>
+    ## vector 이용 풀이 ##
+    ## 정확성 32/32, 효율성 2/8 성공
+    1. food_times 벡터에 pair로 저장 <food_time, 인덱스>
     2. food_time을 기준으로 내림차순 정렬
     3. k가 food_times의 길이보다 크거나 같을동안 반복
         3-1. k에서 (food_times의 가장 작은 원소 * food_times의 길이) 빼기
         3-2. food_times의 food_time 3-1 값만큼 빼기
         3-3. food_time이 0이라면 pop
         3-4. food_times의 길이가 0이라면 더 이상 먹을 것이 없으므로 -1
-    4. 남은 k값 처리
-
+    4. 인덱스 기준으로 food_times 정렬
+    5. food_times에서 (k % food_times의 길이)번째 요소 정답
 */
 
 #include <iostream>
